@@ -1,6 +1,9 @@
-# bytebank
+# Bytebank
 
 A new Flutter project.
+
+![image](https://github.com/marcosprofile/bytebank/assets/86635292/a110f343-cb4a-4b6d-82fc-66c68f6e6b39)
+
 
 ## Getting Started
 
