@@ -26,9 +26,10 @@ class Editor extends StatelessWidget {
         controller: controlador,
         style: const TextStyle(fontSize: 24.0),
         decoration: InputDecoration(
-          icon: icone != null ? Icon(icone) : null,
+          prefixIcon: icone != null ? Icon(icone) : null,
           labelText: rotulo,
           hintText: dica,
+          filled: true,
         ),
         keyboardType: TextInputType.number,
       ),

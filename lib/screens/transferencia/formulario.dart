@@ -33,28 +33,42 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Editor(
-              controlador: _controladorCampoNumeroConta,
-              icone: Icons.account_balance,
-              dica: _dicaCampoNumeroConta,
-              rotulo: _rotuloCampoNumeroConta,
-            ),
-            Editor(
-              controlador: _controladorCampoValor,
-              icone: Icons.monetization_on,
-              dica: _dicaCampoValor,
-              rotulo: _rotuloCampoValor,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: ElevatedButton(
-                child: const Text(_textoBotaoConfirmar),
-                onPressed: () => _novaTransferencia(context),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 12.0, 0, 0),
+          child: Column(
+            children: <Widget>[
+              Editor(
+                controlador: _controladorCampoNumeroConta,
+                icone: Icons.account_balance,
+                dica: _dicaCampoNumeroConta,
+                rotulo: _rotuloCampoNumeroConta,
               ),
-            ),
-          ],
+              Editor(
+                controlador: _controladorCampoValor,
+                icone: Icons.monetization_on,
+                dica: _dicaCampoValor,
+                rotulo: _rotuloCampoValor,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: ElevatedButton(
+                  child: const Text(_textoBotaoConfirmar),
+                  onPressed: () {
+                    _novaTransferencia(context);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text('Transferencia realizada!'),
+                        action: SnackBarAction(
+                        label: 'Fechar',
+                        onPressed: () => print('Transferencia realizada!'),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
